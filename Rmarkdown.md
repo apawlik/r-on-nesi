@@ -1,7 +1,19 @@
 
+In R console (or R Studio):
 
 ```
-sh install-unx.sh 
+install.packages('tinytex')
+```
+
+
+```
+ /nesi/nobackup/landcare00059/aleksandra.pawlik $ curl -O https://raw.githubusercontent.com/yihui/tinytex/master/tools/install-unx.sh
+
+```
+
+
+```
+$sh install-unx.sh 
 --2021-04-22 10:30:09--  http://mirror.ctan.org/systems/texlive/tlnet/install-tl-unx.tar.gz
 Resolving mirror.ctan.org (mirror.ctan.org)... 5.35.249.60
 Connecting to mirror.ctan.org (mirror.ctan.org)|5.35.249.60|:80... connected.
