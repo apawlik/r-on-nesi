@@ -1,19 +1,34 @@
+## RMarkdown on NeSI
 
-In R console (or R Studio):
+If you want to use RMarkdown on NeSI to generate PDF documents, you may need to deal with some set up. There are several ways to do it. Here is one.
+I used [TinyTex](https://yihui.org/tinytex/) because *Installing and maintaining TinyTeX is easy for R users, since the R package tinytex has provided wrapper functions.*. This is all true with some minor modifications. First, in R console (or RStudio):
 
 ```
 install.packages('tinytex')
 ```
 
+The next step (`tinytex::install_tinytex()`) described in the documentation turned out to be more tricky on NeSI. By the looks of it, the size of packages downloaded during the installation exceeds user home directories. However, since `nobackup` has a large drive space allowance, this is what we can use. 
+
+Navigate to `/nesi/nobackup/project_name`. For tidyness, you can create a `tinytex` directory in it and navigate in:
 
 ```
- /nesi/nobackup/landcare00059/aleksandra.pawlik $ curl -O https://raw.githubusercontent.com/yihui/tinytex/master/tools/install-unx.sh
+$ mkdir tinytex
+$ cd tinytex
+```
 
+In the [TinyTex repository](https://github.com/yihui/tinytex/) find the installation script. At the time of writing this documentation it is [here](https://github.com/yihui/tinytex/blob/master/tools/install-unx.sh). We have to download it and run it
+
+``` 
+$ curl -O https://raw.githubusercontent.com/yihui/tinytex/master/tools/install-unx.sh
 ```
 
 
 ```
-$sh install-unx.sh 
+$sh install-unx.sh
+```
+
+The output should be something like this:
+```
 --2021-04-22 10:30:09--  http://mirror.ctan.org/systems/texlive/tlnet/install-tl-unx.tar.gz
 Resolving mirror.ctan.org (mirror.ctan.org)... 5.35.249.60
 Connecting to mirror.ctan.org (mirror.ctan.org)|5.35.249.60|:80... connected.
